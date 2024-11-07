@@ -1,0 +1,75 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c6435e
+    ;
+}
+
+header {
+    background-color:#d36d82;
+    color:rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    background-color: #e097a6;
+}
+
+.produto h2 {
+    color: #333;
+    text-align: center;
+}
+
+.produto img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 20px auto;
+}
+
+.produto p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.produto strong {
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+   background-color: #d36d82;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
