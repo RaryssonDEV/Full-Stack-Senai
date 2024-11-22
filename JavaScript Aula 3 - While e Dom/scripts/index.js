@@ -1,24 +1,22 @@
 //DOM
-//URL - LOCATION
-//BOTAO DE VOLTA - HISTORY
-//SITE / CONTEUDO - DOCUMENT
+//URL
+// "BOTÃO DE VOLTAR" - HISTORY
+// "SITE / CONTEUDO" - DOCUMENT
 
-// window.location.reload() - reinicia a pagina sozinho toda hora
-//window.location = "https://www.google.com" - leva em uma pagina   
+//window. location.reload()
+//window.location= "https://google.com"
 
 //document - documento
-//getElementById - busca o sujeito pelo id
-//iner - coloca um elemento
-//se innertext - apenas texto
-//se innerhtml - texto e codigo
+// getElementById - busca o sujeito pelo id
+// inner.. - coloca um elemento dentro
+// se innerText - apenas texto
+// se innerHTML - Texto e código
+document.getElementById("catalogo").innerHTML = "<h3>OI</h3>"
+document.querySelector ("#catalogo").innerHTML= "A"
+function registrarnome(){
+   nome =  document.querySelector ("#InputNome").value   
+    
 
-document.getElementById('catalogo').innerHTML = 'oi' 
-document.querySelector('ola')
-function registrarNome(){
- nome =  document.querySelector('#inputNome').value
-document.querySelector('#catalogo').innerHTML = `
-    <div id="nomeDiv">
- eu  ${nome} sou muito lindo
-     </div>
-    `
+   document.querySelector ("#catologo").innerHTML = `<div id = "nomeDiv> eu$(nome) sou muito top e faço programa</div>`
+   
 }
