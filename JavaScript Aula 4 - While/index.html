@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%
+        }
+        :root{
+            ----corprimaria:#175572;
+            ----corsecundaria:#3e1dd3;
+        }
+        header,footer {
+            width: 100%;
+            background-color: var(----corprimaria);
+            padding: 20px 0px;
+            display: flex;
+            justify-content: space-around;
+            color: #fff;
+        }
+        header h2 {
+            font-size: 30px;
+        }
+        nav{
+            display: flex;
+            gap: 30px;
+        }
+        nav a{
+            margin-top:20px;
+            text-decoration: none;
+            font-size: 20px;
+            
+        }
+        #logo{
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+        }
+        #loho h2{
+            font-size: 70px;
+        }
+        #logo img{
+            width: 60px;
+        }
+        h1{
+            display: center;
+            text-align: center;
+            font-size: 50px;
+        }
+        #catalogo{
+            width: 90%;
+            margin: 10px auto;
+            padding:20px;
+            background-color: var(----corsecundaria);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            border-radius: 20px;
+        }
+        .filme{
+            width: 200px;
+            padding: 5px;
+            background-color: #ffff;
+            color:#f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            text-align: center;
+    
+        }
+        .filme img{
+            width: 80%;
+            border-radius: 5px;
+        }
+        button{
+            display: flex;
+            padding: 8px;
+            border-radius: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #000000;
+            font-size: 15px;
+        }
+        .filme h4{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.png" alt="logo">
+            <h1>FILMES</h1>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Catalogo</a>
+            <a href="#">Filmes Em Destaque</a>
+            <a href="#"></a>
+        </nav>
+    </header>
+    <br>
+    <h1>Interestelar</h1>
+    <br>
+    <section id="catalogo">
+        <div class="filme">
+            <img src="images/Interestelar.jpg" alt="Interestelar">
+            <h4>INTERESTELAR</h4>
+            <button>
+                adicionar
+                <img src="images/icon/plus.svg" alt="icon">
+            </button>
+        </div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer>
+            Todos Direitos Reservados ao Rarydade
+        </footer>
+        <script>
+            function testes(){
+                //enquanto condicao faca
+                //para de tanto ate tanto fica
+                contardor=0
+                //while(conta < 3){
+                // alert (`que legal"`fiz ${contador+1} vezes`) 
+                // contador++}
+                for(var i=0; i<3; i++){
+                    alert(`que legal"fiz ${i+1} vezes`)
+                }
+            }
+            //testes()
+            function carregarCatalogo(){
+                for(var i=0; i < 5; i++){
+                    document.getElementById(`catalogo`).innerHTML+=`
+                    <div class="filme">
+            <img src="images/Interestelar.jpg" alt="Interestelar">
+            <h4>INTERESTELAR</h4>
+            
+            <button>
+                adicionar
+                <img src="images/icon/plus.svg" alt="icon">
+            </button>
+        </div>
+                    `
+                }
+            }
+            carregarCatalogo()
+        </script>
+</body>
+</html>
