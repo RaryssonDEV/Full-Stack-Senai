@@ -10,34 +10,139 @@
 
     <!-- Estilos personalizados -->
     <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Banner */
         .banner {
-            background-image: url('https://example.com/seu_banner.jpg'); /* Coloque o link do banner do filme aqui */
+            background-image: url('images/Carrete\ De\ Pelicula\ PNG\ \,dibujos\ \ Imágenes\ Prediseñadas\ De\ Carrete\ De\ Película\,\ Películas\ Antiguas\,\ Nostalgia\ PNG\ Imagen\ para\ Descarga\ Gratuita\ _\ Pngtree.jpeg');
             background-size: cover;
             background-position: center;
-            height: 300px;
+            height: 350px;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .modal-content {
-            background-color: #f8f9fa;
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
         }
 
+        /* Lista de filmes */
         .movie-list {
-            margin-top: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         .movie-item {
-            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-item:hover {
+            transform: translateY(-10px);
         }
 
         .movie-item img {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .movie-item h4 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .btn-primary {
+            background-color: #0066cc;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #004a99;
+        }
+
+        /* Modal */
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            border: none;
+            padding: 20px;
+        }
+
+        .modal-header {
+            border-bottom: 2px solid #eee;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .modal-body p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .col-md-4 {
+            width: 300px;
+            margin: 10px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .movie-item img {
+                height: 250px;
+            }
+
+            .movie-list {
+                margin-top: 30px;
+            }
+
+            .col-md-4 {
+                width: 100%;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -45,34 +150,35 @@
 
     <!-- Banner -->
     <div class="banner">
-        <h1>Filmes Incríveis!</h1>
+        <h1><strong>Filmes Incríveis!</strong></h1>
     </div>
 
     <!-- Lista de Filmes -->
     <div class="container movie-list">
-        <h2>Top 3 Filmes</h2>
+        <h2><strong>Top Filmes</strong></h2>
         <div class="row">
             <!-- Filme 1 -->
             <div class="col-md-4 movie-item">
                 <img src="images/interestelar.jpg" alt="interestelar">
-                <h4>Filme 1</h4>
+                <h4>Interestelar</h4>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal1">Ver Descrição</button>
             </div>
             <!-- Filme 2 -->
             <div class="col-md-4 movie-item">
-                <img src="images/o hereditario.jpg" alt="O Hereditario">
-                <h4>Filme 2</h4>
+                <img src="images/o hereditario.jpg" alt="O Hereditário">
+                <h4>O Hereditário</h4>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal2">Ver Descrição</button>
             </div>
             <!-- Filme 3 -->
             <div class="col-md-4 movie-item">
-                <img src="images/Guardiões da galaxia.jpg" alt="Guardiões Da Galaxia">
-                <h4>Filme 3</h4>
+                <img src="images/Guardiões da galaxia.jpg" alt="Guardiões Da Galáxia">
+                <h4>Guardiões Da Galáxia</h4>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal3">Ver Descrição</button>
             </div>
         </div>
     </div>
 
+    <!-- Modais de Descrição -->
     <!-- Modal de Descrição de Filme 1 -->
     <div class="modal fade" id="movieModal1" tabindex="-1" aria-labelledby="movieModalLabel1" aria-hidden="true">
         <div class="modal-dialog">
@@ -82,7 +188,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
-                    <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar.</p>
+                    <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie...</p>
                 </div>
             </div>
         </div>
@@ -97,7 +203,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca, ela permanece como se fosse uma sombra sobre a família, especialmente sobre a solitária neta adolescente, Charlie, por quem ela sempre manteve uma fascinação não usual. Com um crescente terror tomando conta da casa, a família explora lugares mais escuros para escapar do infeliz destino que herdaram.</p>
+                    <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca...</p>
                 </div>
             </div>
         </div>
@@ -112,7 +218,145 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Peter Quill deve reunir sua equipe para defender o universo e proteger um dos seus. Se a missão não for totalmente bem-sucedida, isso pode levar ao fim dos Guardiões.</p>
+                    <p>Peter Quill deve reunir sua equipe para defender o universo...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Lista de Filmes -->
+     <div class="container movie-list">
+        <div class="row">
+            <!-- Filme 4 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/interestelar.jpg" alt="interestelar">
+                <h4>Interestelar</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal1">Ver Descrição</button>
+            </div>
+            <!-- Filme 5 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/o hereditario.jpg" alt="O Hereditário">
+                <h4>O Hereditário</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal2">Ver Descrição</button>
+            </div>
+            <!-- Filme 6 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/Guardiões da galaxia.jpg" alt="Guardiões Da Galáxia">
+                <h4>Guardiões Da Galáxia</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal3">Ver Descrição</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais de Descrição -->
+    <!-- Modal de Descrição de Filme 4 -->
+    <div class="modal fade" id="movieModal1" tabindex="-1" aria-labelledby="movieModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel1">Descrição do Filme 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 5 -->
+    <div class="modal fade" id="movieModal2" tabindex="-1" aria-labelledby="movieModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel2">Descrição do Filme 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 6 -->
+    <div class="modal fade" id="movieModal3" tabindex="-1" aria-labelledby="movieModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel3">Descrição do Filme 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Peter Quill deve reunir sua equipe para defender o universo...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Lista de Filmes -->
+     <div class="container movie-list">
+        <div class="row">
+            <!-- Filme 7 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/interestelar.jpg" alt="interestelar">
+                <h4>Interestelar</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal1">Ver Descrição</button>
+            </div>
+            <!-- Filme 8 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/o hereditario.jpg" alt="O Hereditário">
+                <h4>O Hereditário</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal2">Ver Descrição</button>
+            </div>
+            <!-- Filme 9 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/Guardiões da galaxia.jpg" alt="Guardiões Da Galáxia">
+                <h4>Guardiões Da Galáxia</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal3">Ver Descrição</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais de Descrição -->
+    <!-- Modal de Descrição de Filme 7 -->
+    <div class="modal fade" id="movieModal1" tabindex="-1" aria-labelledby="movieModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel1">Descrição do Filme 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 8 -->
+    <div class="modal fade" id="movieModal2" tabindex="-1" aria-labelledby="movieModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel2">Descrição do Filme 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 9-->
+    <div class="modal fade" id="movieModal3" tabindex="-1" aria-labelledby="movieModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel3">Descrição do Filme 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Peter Quill deve reunir sua equipe para defender o universo...</p>
                 </div>
             </div>
         </div>
