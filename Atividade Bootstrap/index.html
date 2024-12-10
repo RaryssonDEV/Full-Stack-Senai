@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Filmes</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <style>
+        .banner {
+            background-image: url('https://example.com/seu_banner.jpg'); /* Coloque o link do banner do filme aqui */
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #f8f9fa;
+        }
+
+        .movie-list {
+            margin-top: 30px;
+        }
+
+        .movie-item {
+            margin-bottom: 20px;
+        }
+
+        .movie-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Filmes Incríveis!</h1>
+    </div>
+
+    <!-- Lista de Filmes -->
+    <div class="container movie-list">
+        <h2>Top 3 Filmes</h2>
+        <div class="row">
+            <!-- Filme 1 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/interestelar.jpg" alt="interestelar">
+                <h4>Filme 1</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal1">Ver Descrição</button>
+            </div>
+            <!-- Filme 2 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/o hereditario.jpg" alt="O Hereditario">
+                <h4>Filme 2</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal2">Ver Descrição</button>
+            </div>
+            <!-- Filme 3 -->
+            <div class="col-md-4 movie-item">
+                <img src="images/Guardiões da galaxia.jpg" alt="Guardiões Da Galaxia">
+                <h4>Filme 3</h4>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#movieModal3">Ver Descrição</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 1 -->
+    <div class="modal fade" id="movieModal1" tabindex="-1" aria-labelledby="movieModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel1">Descrição do Filme 1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>As reservas naturais da Terra estão chegando ao fim e um grupo de astronautas recebe a missão de verificar possíveis planetas para receberem a população mundial, possibilitando a continuação da espécie. Cooper é chamado para liderar o grupo e aceita a missão sabendo que pode nunca mais ver os filhos. Ao lado de Brand, Jenkins e Doyle, ele seguirá em busca de um novo lar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 2 -->
+    <div class="modal fade" id="movieModal2" tabindex="-1" aria-labelledby="movieModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel2">Descrição do Filme 2</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca, ela permanece como se fosse uma sombra sobre a família, especialmente sobre a solitária neta adolescente, Charlie, por quem ela sempre manteve uma fascinação não usual. Com um crescente terror tomando conta da casa, a família explora lugares mais escuros para escapar do infeliz destino que herdaram.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Descrição de Filme 3 -->
+    <div class="modal fade" id="movieModal3" tabindex="-1" aria-labelledby="movieModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieModalLabel3">Descrição do Filme 3</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Peter Quill deve reunir sua equipe para defender o universo e proteger um dos seus. Se a missão não for totalmente bem-sucedida, isso pode levar ao fim dos Guardiões.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
