@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas com Map</title>
+    <style>
+        /* Resetando margens e paddings padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2a2a72;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .category h2 {
+            font-size: 28px;
+            color: #2a2a72;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .recipe-list {
+            list-style-type: none;
+        }
+
+        .recipe-list li {
+            padding: 12px;
+            margin: 8px 0;
+            background-color: #e9eff1;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #333;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Efeito de hover nos itens da lista */
+        .recipe-list li:hover {
+            background-color: #a3d8ff;
+            transform: translateY(-2px);
+        }
+
+        /* Estilizando a barra de rolagem para um visual mais moderno */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #a3d8ff;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #f4f7fb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Receitas Categorias</h1>
+    
+    <div class="category" id="salgado">
+        <h2>Salgados</h2>
+        <ul id="salgado-list" class="recipe-list"></ul>
+    </div>
+
+    <div class="category" id="doce">
+        <h2>Doces</h2>
+        <ul id="doce-list" class="recipe-list"></ul>
+    </div>
+
+    <div class="category" id="sucos">
+        <h2>Sucos</h2>
+        <ul id="sucos-list" class="recipe-list"></ul>
+    </div>
+</div>
+
+<script>
+    // Definindo as receitas por categoria
+    const receitas = {
+        salgado: [
+            "Coxinha",
+            "Empada",
+            "Pastel de Carne"
+        ],
+        doce: [
+            "Bolo de Chocolate",
+            "Brigadeiro",
+            "Pavê"
+        ],
+        sucos: [
+            "Suco de Laranja",
+            "Suco de Abacaxi",
+            "Suco de Morango"
+        ]
+    };
+
+    // Função para exibir as receitas na tela usando map
+    function exibirReceitas(categoria, listaId) {
+        const listaElement = document.getElementById(listaId);
+        
+        // Usando map para iterar e criar os itens de lista
+        receitas[categoria].map(receita => {
+            const item = document.createElement('li');
+            item.textContent = receita;
+            listaElement.appendChild(item);
+        });
+    }
+
+    // Exibindo as receitas para cada categoria
+    exibirReceitas('salgado', 'salgado-list');
+    exibirReceitas('doce', 'doce-list');
+    exibirReceitas('sucos', 'sucos-list');
+</script>
+
+</body>
+</html>
