@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Filmes Favoritos</title>
+    <style>
+        /* Estilização Geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #121212;
+        }
+
+        h1 {
+            color: #ff6f00;
+            margin-top: 20px;
+            font-size: 3em;
+            text-align: center;
+        }
+
+        /* Container da Lista */
+        #lista-de-filmes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Estilo de cada item da lista */
+        .filme {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .filme:hover {
+            transform: scale(1.05);
+        }
+
+        .filme img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .titulo {
+            padding: 10px;
+            background-color: #222;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Meus Filmes Favoritos</h1>
+    <ul id="lista-de-filmes"></ul>
+
+    <script>
+        // Array com filmes e suas imagens de capa
+        const filmes = [
+            {
+                titulo: "O Senhor dos Anéis: A Sociedade do Anel",
+                imagem: "images/senhor.jpg"
+            },
+            {
+                titulo: "A Origem",
+                imagem: "images/origem.jpg"
+            },
+            {
+                titulo: "Interstellar",
+                imagem: "images/inter.png"
+            },
+            {
+                titulo: "O Poderoso Chefão",
+                imagem: "images/poderos.webp"
+            },
+            {
+                titulo: "Matrix",
+                imagem: "images/matrix.jpg"
+            },
+            {
+                titulo: "Pulp Fiction",
+                imagem: "images/Pulp.jpg"
+            }
+        ];
+
+        // Pegando o elemento HTML onde a lista será inserida
+        const listaDeFilmes = document.getElementById("lista-de-filmes");
+
+        // Adicionando os filmes ao HTML
+        filmes.forEach(filme => {
+            const li = document.createElement("li");
+            li.classList.add("filme");
+
+            // Criando a estrutura de cada item de filme
+            const img = document.createElement("img");
+            img.src = filme.imagem; // Atribuindo a imagem
+            img.alt = filme.titulo; // Atribuindo o texto alternativo
+
+            const divTitulo = document.createElement("div");
+            divTitulo.classList.add("titulo");
+            divTitulo.textContent = filme.titulo; // Atribuindo o título do filme
+
+            // Adicionando imagem e título no item
+            li.appendChild(img);
+            li.appendChild(divTitulo);
+
+            // Adicionando o item à lista
+            listaDeFilmes.appendChild(li);
+        });
+    </script>
+
+</body>
+</html>
