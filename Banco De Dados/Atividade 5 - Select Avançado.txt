@@ -1,0 +1,15 @@
+Resumo sobre ORDER BY e LIMIT
+O comando ORDER BY é utilizado para ordenar os resultados de uma consulta SQL com base em uma ou mais colunas, podendo ser crescente (ASC) ou decrescente (DESC). Já o LIMIT restringe o número de registros retornados pela consulta, sendo útil para paginação e otimização de desempenho.
+Exemplo de Comando em Tabela Fictícia
+Suponha que temos uma tabela chamada produtos, com os seguintes campos: id, nome, preco e categoria. Podemos listar os 5 produtos mais caros da categoria "eletrônicos" com o seguinte comando:
+sql
+CopiarEditar
+SELECT * FROM produtos  
+WHERE categoria = 'eletrônicos'  
+ORDER BY preco DESC  
+LIMIT 5;
+
+Exemplos de Uso em Sistemas
+E-commerce: Exibir os produtos mais vendidos ou mais bem avaliados no topo da página.
+Rede Social: Listar os posts mais recentes ou mais curtidos em um feed de notícias.
+Sistema de Gestão: Mostrar os últimos pedidos realizados por um cliente, ordenando pela data da compra.

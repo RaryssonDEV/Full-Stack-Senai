@@ -1,0 +1,43 @@
+1. Correção de Caixa Alta e Baixa
+Para padronizar todos os nomes dos clientes para letras maiúsculas, você pode utilizar a função UPPER().
+UPDATE clientes
+SET nome = UPPER(nome);
+
+Esse comando transforma todos os nomes na tabela clientes para letras maiúsculas.
+2. Normalização de E-mails
+Para garantir que todos os e-mails fiquem em letras minúsculas, use a função LOWER().
+
+UPDATE clientes
+SET email = LOWER(email);
+
+Esse comando converte todos os e-mails da tabela clientes para minúsculas.
+3. Identificação de Produtos Específicos
+Se a TechStore quer encontrar produtos que contêm a palavra "Notebook" na descrição, você pode usar a cláusula LIKE.
+
+SELECT * 
+FROM produtos
+WHERE descricao LIKE '%Notebook%';
+
+Este comando retorna todos os produtos cuja descrição contenha a palavra "Notebook" (independente de maiúsculas ou minúsculas).
+4. Verificação de Domínios de E-mail
+Para contar quantos clientes possuem e-mails do domínio "@gmail.com", use o comando COUNT() combinado com LIKE.
+
+SELECT COUNT(*)
+FROM clientes
+WHERE email LIKE '%@gmail.com';
+
+Esse comando retorna a quantidade de clientes com e-mails que terminam em "@gmail.com".
+5. Padronização de Endereços
+Para substituir todas as ocorrências de "Av." por "Avenida" nos endereços, você pode usar a função REPLACE().
+
+UPDATE clientes
+SET endereco = REPLACE(endereco, 'Av.', 'Avenida');
+
+Esse comando substitui "Av." por "Avenida" em todos os endereços na tabela clientes.
+6. Identificação de Produtos Sem Código
+Para encontrar produtos sem código, você pode utilizar a condição IS NULL ou verificar se o código está vazio ('').
+
+SELECT * 
+FROM produtos
+WHERE codigo IS NULL OR codigo = '';
+

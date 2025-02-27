@@ -1,0 +1,12 @@
+Gerenciamento de Banco de Dados (DBMS): 
+O gerenciamento de banco de dados (DBMS, do inglês Database Management System) é um sistema de software projetado para criar, gerenciar e interagir com bancos de dados.
+Ele oferece uma interface para os usuários e aplicativos interagirem com os dados de forma eficiente e segura.
+Os DBMSs oferecem funcionalidades como: armazenamento de dados, manipulação de dados (inserção, atualização, remoção), controle de acesso, recuperação e backup, e até suporte à concorrência entre múltiplos usuários.
+Bancos de Dados Relacionais:
+ Bancos de dados relacionais são um tipo específico de banco de dados que organiza os dados em tabelas compostas por linhas e colunas.
+ Cada tabela tem uma chave primária, e as relações entre as tabelas são feitas através de chaves estrangeiras.
+ O modelo relacional usa a linguagem SQL (Structured Query Language) para realizar operações de manipulação e consulta dos dados. Um exemplo clássico de banco de dados relacional é o MySQL, PostgreSQL e o Oracle.
+Diagrama de Dados (ou Diagrama Entidade-Relacionamento - DER): Um Diagrama de Entidade-Relacionamento (DER) é uma representação gráfica das entidades de um banco de dados e seus relacionamentos.
+Ele é uma ferramenta usada para modelar o banco de dados antes de sua implementação.
+O diagrama mostra como as diferentes tabelas se conectam entre si, as entidades que compõem o banco e as relações entre essas entidades. 
+Pode incluir detalhes como cardinalidade (1:1, 1:N, N:M) e restrições de integridade.

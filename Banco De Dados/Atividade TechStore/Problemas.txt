@@ -1,0 +1,27 @@
+empresa TechStore está reformulando seu banco de dados e precisa corrigir inconsistências nos cadastros de clientes, produtos e pedidos. Você foi contratado como analista de dados para padronizar e corrigir essas informações usando comandos SQL de manipulação de strings.
+
+Abaixo estão algumas tarefas que você deve resolver para garantir que os dados fiquem organizados e padronizados.
+
+1. Correção de Caixa Alta e Baixa
+
+Problema: Muitos clientes cadastraram seus nomes com letras maiúsculas ou minúsculas de forma inconsistente. Como padronizar todos os nomes para ficarem em letras maiúsculas?
+
+2. Normalização de E-mails
+
+Problema: Os e-mails dos clientes foram digitados com letras maiúsculas e minúsculas misturadas. Como garantir que todos os e-mails fiquem em minúsculas?
+
+3. Identificação de Produtos Específicos
+
+Problema: A TechStore quer encontrar rapidamente os produtos que contêm a palavra "Notebook" na descrição. Como fazer isso?
+
+4. Verificação de Domínios de E-mail
+
+Problema: A empresa quer saber quantos clientes possuem e-mails do domínio "@gmail.com". Como contar esses clientes?
+
+5. Padronização de Endereços
+
+Problema: Alguns endereços foram cadastrados com abreviações inconsistentes, como "Av." em vez de "Avenida". Como substituir todas as ocorrências de "Av." por "Avenida" nos endereços?
+
+6. Identificação de Produtos Sem Código
+
+Problema: Alguns produtos foram cadastrados sem código. Como encontrar esses registros?
