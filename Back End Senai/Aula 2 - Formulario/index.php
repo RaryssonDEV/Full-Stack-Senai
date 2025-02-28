@@ -25,7 +25,7 @@
 
     <div class="form input">
         <label for="senha" >Senha</label>
-        <input placeholder="Digire sua senha"  id="senha" name="senha" type="password">
+        <input placeholder="Digite sua senha"  id="senha" name="senha" type="password">
     </div> 
          <button type="submit">Enviar</button>
 
